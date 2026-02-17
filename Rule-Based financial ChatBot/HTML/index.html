@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+    <!-- Animated background shapes -->
+    <div class="floating-circle one"></div>
+    <div class="floating-circle two"></div>
+    <div class="floating-circle three"></div>
+
+    <!-- Chat container -->
+    <div class="chat-wrapper">
+
+        <header class="chat-header">
+            <h1>💰 Financial Chatbot 💰</h1>
+            <span class="status">● Online</span>
+        </header>
+
+        <div id="chat-box">
+            <div class="bot-message">
+                👋 Hello! Ask me anything about finance.
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Type your question..."
+                onkeydown="if(event.key === 'Enter') sendMessage()"
+            />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../JAVA/script.js"></script>
+</body>
+</html>

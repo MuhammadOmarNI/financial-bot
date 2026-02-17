@@ -1,0 +1,169 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Floating background circles */
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: float 12s infinite ease-in-out;
+}
+
+.floating-circle.one {
+    width: 200px;
+    height: 200px;
+    background: #00c6ff;
+    top: 10%;
+    left: 15%;
+}
+
+.floating-circle.two {
+    width: 300px;
+    height: 300px;
+    background: #0072ff;
+    bottom: 15%;
+    right: 10%;
+    animation-duration: 15s;
+}
+
+.floating-circle.three {
+    width: 150px;
+    height: 150px;
+    background: #00ffcc;
+    bottom: 40%;
+    left: 60%;
+    animation-duration: 18s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Chat wrapper */
+.chat-wrapper {
+    width: 420px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.chat-header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.chat-header h1 {
+    font-size: 22px;
+}
+
+.status {
+    font-size: 12px;
+    color: #00ff88;
+}
+
+/* Chat box */
+#chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.bot-message {
+    background: rgba(0, 255, 170, 0.15);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    animation: slideIn 0.4s ease;
+}
+
+.user-message {
+    background: rgba(0, 120, 255, 0.4);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    text-align: right;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-area button {
+    margin-left: 10px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #00c6ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.input-area button:hover {
+    background: #00ffcc;
+    transform: scale(1.05);
+}
